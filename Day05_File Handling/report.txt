@@ -1,0 +1,3 @@
+NOC daily report 
+ERRORS: 2 
+WARNINGS: 1 

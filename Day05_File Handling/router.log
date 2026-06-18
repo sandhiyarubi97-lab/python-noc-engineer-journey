@@ -1,0 +1,5 @@
+INFO: router booted
+ERROR: Interface Gi0/1 down 
+WARNING: CPU 80% 
+ERROR: OSPF neighbor lost 
+INFO: config saved 
