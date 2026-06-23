@@ -7,11 +7,10 @@ cisco_router = {
     'host': 'sandbox-iosxe-latest-1.cisco.com',
     'username': 'admin',
     'password': 'C1sco12345',
-    'port': 22,
 }
-print("Connecting to router...")
+print("Connecting ...")
 try:
-    net_connect = ConnectHandler(**cisco_router)        #net_coonect : base connection
+    net_connect = ConnectHandler(**cisco_router)        #net_connect : base connection
     output = net_connect.send_command("show interface brief")
     net_connect.disconnect()
 
