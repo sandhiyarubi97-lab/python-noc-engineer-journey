@@ -19,12 +19,3 @@ Automating network operations with Python. Zero to NOC-ready in 30 days.
 3. **Error Handling:** `FileNotFoundError`, `ValueError`, DNS issues, Git troubleshooting
 4. **NOC Workflows:** Interface monitoring, alert generation, config backup, mock-driven development
 
-## 💡 Key Learnings
-- We can develop using mock data without live device access
-- Every error = Real NOC scenario: DNS fail, Firewall block, File path issues
-- Git repo = Your automation portfolio
-
-## 🔥 Run Day 9 Script
-```bash
-cd Day09_Config_Backup
-python day9_backup_textfsm.py
