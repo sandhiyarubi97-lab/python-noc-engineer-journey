@@ -1,7 +1,7 @@
-Value Filldown HOSTNAME (\S+)
-Value Required VERSION (\d+\.\d+\S*)
-Value Required UPTIME (.+)
+Value HOSTNAME (\S+)
+Value UPTIME (.+)
+Value VERSION (\S+)
 
 Start
-  ^${HOSTNAME}\s+uptime\s+is\s+${UPTIME} -> Continue
-  ^Cisco\s+IOS\s+Software.*Version\s+${VERSION} -> Record
+  ^${HOSTNAME}\s+uptime\s+is\s+${UPTIME}
+  ^Cisco\s+IOS.*Version\s+${VERSION} -> Record
