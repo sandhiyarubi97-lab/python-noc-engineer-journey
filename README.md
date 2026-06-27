@@ -1,21 +1,43 @@
-# 30 Days Python for NOC Engineers - Day 1 to 9 Complete
+# Python-NOC-Journey
+30 Day Python for NOC Engineer
+Learning Python for Network Operations and Automation from Chennai 🇮🇳
 
-Automating network operations with Python. Zero to NOC-ready in 30 days.
+## 📈 Progress: 10/30 Days Complete
 
-## 📅 Progress Tracker
+- [x] **Day 1:** Variables, input(), print()
+- [x] **Day 2:** String methods - split(), strip(), replace()
+- [x] **Day 3:** Loops - for/while + break/continue
+- [x] **Day 4:** Lists and Dictionaries - NOC inventory basics
+- [x] **Day 5:** File Handling - Log Analyzer
+- [x] **Day 6:** Netmiko - SSH to Cisco devices
+- [x] **Day 7:** TextFSM - Parse `show` command output
+- [x] **Day 8:** CSV Alerting - Alert for DOWN interfaces
+- [x] **Day 9:** Config Backup - Netmiko + TextFSM + Mock Fallback
+- [x] **Day 10:** Logging - 24x7 monitoring + audit trail
+- [ ] **Day 11:** CSV Reporting - Uptime extraction + daily reports
+- [ ] **Day 12:** SNMP Basics - CPU/Memory monitoring
+- [ ] **Day 13:** Multi-threading - Monitor 10 devices parallel
+- [ ] **Day 14:** Email Alerts - smtplib for NOC notifications
+- [ ] **Day 15:** Flask Dashboard - Web UI for monitoring
+...
+- [ ] **Day 30:** Capstone - Full NOC Automation Suite
 
-| Day | Topic | Status | Key Skills |
-| --- | --- | --- | --- |
-| **Day 1-5** | Python Fundamentals | ✅ Complete | Variables, Strings, Loops, Lists/Dicts, File I/O |
-| **Day 6** | Netmiko SSH Automation | ✅ Complete | `ConnectHandler`, device login, error handling |
-| **Day 7** | Parse `show interface brief` | ✅ Complete | Mock output, CSV export, TextFSM intro |
-| **Day 8** | NOC Alert System | ✅ Complete | Read CSV, filter DOWN interfaces, error handling |
-| **Day 9** | Config Backup + TextFSM | ✅ Complete | `show run`, TextFSM parsing, mock fallback |
-| **Day 10-30** | Coming Soon | 🔜 | SNMP, APIs, Multi-threading, Web Dashboard |
+## 🔥 Key Projects
 
-## 🛠️ Skills Covered So Far
-1. **Device Automation:** Netmiko SSH, handling `TimeoutException`, `AuthenticationException`
-2. **Data Parsing:** CSV read/write, TextFSM, filtering network data
-3. **Error Handling:** `FileNotFoundError`, `ValueError`, DNS issues, Git troubleshooting
-4. **NOC Workflows:** Interface monitoring, alert generation, config backup, mock-driven development
+### **Day 5: Log Analyzer**
+Built log analyzer that parses router logs and counts ERROR/WARNING lines.
+**Tech:** Python, file I/O, loops, conditionals
 
+### **Day 9: Config Backup Tool**
+Automated config backup for Cisco devices using Netmiko. Added TextFSM parsing + mock fallback for when devices are unreachable.
+**Tech:** Netmiko, TextFSM, Exception Handling, Production Patterns
+
+### **Day 10: 24x7 Uptime Monitor**
+Implemented production-grade logging for router monitoring. Captures all events with timestamps for audit trail. Graceful fallback when devices fail.
+**Tech:** `logging` module, Netmiko, `try/except`, Mock-driven development
+
+## 🚀 Run Projects
+
+### **Day 5: Log Checker**
+```bash
+python Day05_File_Handling/day5_log_checker.py``
