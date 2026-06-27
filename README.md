@@ -15,9 +15,9 @@ Learning Python for Network Operations and Automation from Chennai 🇮🇳
 - [x] **Day 9:** Config Backup - Netmiko + TextFSM + Mock Fallback
 - [x] **Day 10:** Logging - 24x7 monitoring + audit trail
 - [ ] **Day 11:** CSV Reporting - Uptime extraction + daily reports
-- [ ] **Day 12:** SNMP Basics - CPU/Memory monitoring
-- [ ] **Day 13:** Multi-threading - Monitor 10 devices parallel
-- [ ] **Day 14:** Email Alerts - smtplib for NOC notifications
+- [ ] **Day 12:** Multi-threading - Monitor 10 devices parallel
+- [ ] **Day 13:** SNMP Basics - CPU/memory monitoring
+- [ ] **Day 14:** Flash Dashboard - Web UI
 - [ ] **Day 15:** Flask Dashboard - Web UI for monitoring
 ...
 - [ ] **Day 30:** Capstone - Full NOC Automation Suite
