@@ -2,7 +2,7 @@
 30 Day Python for NOC Engineer
 Learning Python for Network Operations and Automation from Chennai 🇮🇳
 
-## 📈 Progress: 10/30 Days Complete
+## 📈 Progress: 11/30 Days Complete
 
 - [x] **Day 1:** Variables, input(), print()
 - [x] **Day 2:** String methods - split(), strip(), replace()
