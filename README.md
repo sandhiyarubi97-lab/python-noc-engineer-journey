@@ -2,7 +2,7 @@
 30 Day Python for NOC Engineer
 Learning Python for Network Operations and Automation from Chennai 🇮🇳
 
-## 📈 Progress: 10/30 Days Complete
+## 📈 Progress: 11/30 Days Complete
 
 - [x] **Day 1:** Variables, input(), print()
 - [x] **Day 2:** String methods - split(), strip(), replace()
@@ -14,10 +14,12 @@ Learning Python for Network Operations and Automation from Chennai 🇮🇳
 - [x] **Day 8:** CSV Alerting - Alert for DOWN interfaces
 - [x] **Day 9:** Config Backup - Netmiko + TextFSM + Mock Fallback
 - [x] **Day 10:** Logging - 24x7 monitoring + audit trail
-- [ ] **Day 11:** CSV Reporting - Uptime extraction + daily reports
-- [ ] **Day 12:** Multi-threading - Monitor 10 devices parallel
-- [ ] **Day 13:** SNMP Basics - CPU/memory monitoring
-- [ ] **Day 14:** Flash Dashboard - Web UI
+<<<<<<< HEAD
+- [ ] **Day 11:** CSV Reporting - Uptime extraction + daily reports +Email alerts
+- [ ] **Day 12:** Multi-threading monitor 10 devices parallel
+- [ ] **Day 13:** SNMP Basics - CPU/Memory Monitoring
+>>>>>>> b72b5aeddaaf46f6182e4afe2f72329b58188db1
+- [ ] **Day 14:** Flask Dashboard - Web UI
 - [ ] **Day 15:** Flask Dashboard - Web UI for monitoring
 ...
 - [ ] **Day 30:** Capstone - Full NOC Automation Suite
