@@ -14,11 +14,9 @@ Learning Python for Network Operations and Automation from Chennai 🇮🇳
 - [x] **Day 8:** CSV Alerting - Alert for DOWN interfaces
 - [x] **Day 9:** Config Backup - Netmiko + TextFSM + Mock Fallback
 - [x] **Day 10:** Logging - 24x7 monitoring + audit trail
-<<<<<<< HEAD
-- [ ] **Day 11:** CSV Reporting - Uptime extraction + daily reports +Email alerts
-- [ ] **Day 12:** Multi-threading monitor 10 devices parallel
-- [ ] **Day 13:** SNMP Basics - CPU/Memory Monitoring
->>>>>>> b72b5aeddaaf46f6182e4afe2f72329b58188db1
+- [x] **Day 11:** CSV Reporting - Uptime extraction + daily reports + Email alerts
+- [x] **Day 12:** Multi-threading - monitor 12 devices parallel - 10x speed boost
+- [x] **Day 13:** SNMP Basics - CPU/Memory Monitoring  
 - [ ] **Day 14:** Flask Dashboard - Web UI
 - [ ] **Day 15:** Flask Dashboard - Web UI for monitoring
 ...
@@ -37,6 +35,10 @@ Automated config backup for Cisco devices using Netmiko. Added TextFSM parsing +
 ### **Day 10: 24x7 Uptime Monitor**
 Implemented production-grade logging for router monitoring. Captures all events with timestamps for audit trail. Graceful fallback when devices fail.
 **Tech:** `logging` module, Netmiko, `try/except`, Mock-driven development
+
+### **Day 12: Multi-threaded Monitor**
+Cut monitoring time 10x using Python threading. 12 devices in 2.18s vs 24s single-thread.
+**Tech:** 'threading', 'logging', Mock network calls, MTTR reduction
 
 ## 🚀 Run Projects
 
