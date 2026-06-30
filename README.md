@@ -2,7 +2,7 @@
 30 Day Python for NOC Engineer
 Learning Python for Network Operations and Automation from Chennai 🇮🇳
 
-## 📈 Progress: 12/30 Days Complete
+## 📈 Progress: 14/30 Days Complete
 
 - [x] **Day 1:** Variables, input(), print()
 - [x] **Day 2:** String methods - split(), strip(), replace()
@@ -16,8 +16,8 @@ Learning Python for Network Operations and Automation from Chennai 🇮🇳
 - [x] **Day 10:** Logging - 24x7 monitoring + audit trail
 - [x] **Day 11:** CSV Reporting - Uptime extraction + daily reports + Email alerts
 - [x] **Day 12:** Multi-threading - Monitor 12 devices parallel - 10x speed boost
-- [ ] **Day 13:** SNMP Basics - CPU/Memory Monitoring
-- [ ] **Day 14:** Flask Dashboard - Web UI for monitoring
+- [x] **Day 13:** SNMP Basics - CPU/Memory Monitoring
+- [x] **Day 14:** Flask Dashboard - Web UI for monitoring
 - [ ] **Day 15:** Email Alerts - Advanced smtplib + HTML reports
 ...
 - [ ] **Day 30:** Capstone - Full NOC Automation Suite
@@ -40,8 +40,22 @@ Implemented production-grade logging for router monitoring. Captures all events 
 Cut monitoring time 10x using Python threading. 12 devices in 2.18s vs 24s single-thread.
 **Tech:** `threading`, `logging`, Mock network calls, MTTR reduction
 
+### ** Day 13: SNMP Monitor
+Built multi-threaded SNMP poller for CPU/Memory. 4 devices in parallel with CRITICAL/WARNING thresholds. Tech: pysnmp, threading, CSV reports
+
+### **Day 14: Flask Dashboard - Web UI for SNMP monitoring**
+Built Flask web dashboard that auto-reads CSV reports. Color-coded CRITICAL/WARNING/OK status. 
+Tech: Flask, Jinja2, HTML/CSS, CSV parsing
+
 ## 🚀 Run Projects
 
 ### **Day 5: Log Checker**
 ```bash
 python Day05_File_Handling/day5_log_checker.py
+
+### **Day 13: SNMP check**
+python Day13_SNMP/snmp_check.py
+
+### Day 14: Launch Dashboard
+python Day14_Dashboard/app.py
+then open http://127.0.0.1:5000
