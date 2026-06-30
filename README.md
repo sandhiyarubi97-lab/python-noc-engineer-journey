@@ -2,7 +2,7 @@
 30 Day Python for NOC Engineer
 Learning Python for Network Operations and Automation from Chennai 🇮🇳
 
-## 📈 Progress: 11/30 Days Complete
+## 📈 Progress: 12/30 Days Complete
 
 - [x] **Day 1:** Variables, input(), print()
 - [x] **Day 2:** String methods - split(), strip(), replace()
@@ -15,10 +15,10 @@ Learning Python for Network Operations and Automation from Chennai 🇮🇳
 - [x] **Day 9:** Config Backup - Netmiko + TextFSM + Mock Fallback
 - [x] **Day 10:** Logging - 24x7 monitoring + audit trail
 - [x] **Day 11:** CSV Reporting - Uptime extraction + daily reports + Email alerts
-- [x] **Day 12:** Multi-threading - monitor 12 devices parallel - 10x speed boost
-- [x] **Day 13:** SNMP Basics - CPU/Memory Monitoring  
-- [ ] **Day 14:** Flask Dashboard - Web UI
-- [ ] **Day 15:** Flask Dashboard - Web UI for monitoring
+- [x] **Day 12:** Multi-threading - Monitor 12 devices parallel - 10x speed boost
+- [ ] **Day 13:** SNMP Basics - CPU/Memory Monitoring
+- [ ] **Day 14:** Flask Dashboard - Web UI for monitoring
+- [ ] **Day 15:** Email Alerts - Advanced smtplib + HTML reports
 ...
 - [ ] **Day 30:** Capstone - Full NOC Automation Suite
 
@@ -38,10 +38,10 @@ Implemented production-grade logging for router monitoring. Captures all events 
 
 ### **Day 12: Multi-threaded Monitor**
 Cut monitoring time 10x using Python threading. 12 devices in 2.18s vs 24s single-thread.
-**Tech:** 'threading', 'logging', Mock network calls, MTTR reduction
+**Tech:** `threading`, `logging`, Mock network calls, MTTR reduction
 
 ## 🚀 Run Projects
 
 ### **Day 5: Log Checker**
 ```bash
-python Day05_File_Handling/day5_log_checker.py``
+python Day05_File_Handling/day5_log_checker.py
