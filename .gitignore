@@ -226,3 +226,6 @@ Day11_CSV_Reports/reports/
 Day12_NOC_Challenge/router_report.csv 
 Day12_NOC_Challenge/routers.txt 
 Day12_NOC_Challenge/*.log 
+Day12_NOC_Challenge/*.csv
+Day12_NOC_Challenge/*.txt
+Day13_SNMP/*.csv
