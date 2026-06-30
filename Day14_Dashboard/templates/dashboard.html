@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NOC Dashboard</title>
+    <style>
+        body{font-family:Arial;background:#0d1117;color:#fff;margin:20px}
+        h1{color:#58a6ff}
+        table{width:100%;border-collapse:collapse}
+        th{background:#58a6ff;color:#000;padding:10px}
+        td{padding:8px;border-bottom:1px solid #30363d}
+        .CRITICAL{background:#da3633;font-weight:bold}
+        .WARNING{background:#d29922;color:#000;font-weight:bold}
+        .OK{background:#238636}
+    </style>
+</head>
+<body>
+    <h1>🚀 NOC Health Dashboard - Live</h1>
+    <table>
+        <tr>
+            <th>Device</th>
+            <th>CPU %</th>
+            <th>Status</th>
+            <th>Memory %</th>
+            <th>Status</th>
+        </tr>
+        {% for d in devices %}
+        <tr>
+            <td>{{ d['Device'] }}</td>
+            <td>{{ d['CPU_%'] }}</td>
+            <td class="{{ d['CPU_Status'] }}">{{ d['CPU_Status'] }}</td>
+            <td>{{ d['Memory_%'] }}</td>
+            <td class="{{ d['Memory_Status'] }}">{{ d['Memory_Status'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
