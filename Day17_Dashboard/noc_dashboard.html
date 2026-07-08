@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NOC Dashboard</title>
+    <meta charset="UTF-8">
+    <style>
+    body {font-family: Arial; background: #0f172a; color: white; padding: 20px;}
+    h1 {color: #38bdf8;}
+    table {width: 100%; border-collapse: collapse; margin-top: 20px;}
+    th, td {padding: 12px; text-align: center; border: 1px solid #334155;}
+    th {background: #1e293b; color: #38bdf8;}
+    .OK {background: #16a34a;}
+    .WARNING {background: #f59e0b; color: black;}
+    .CRITICAL {background: #dc2626;}
+    </style>
+</head>
+<body>
+    <h1> NOC Health Dashboard - Live</h1>
+    <p>Last Updated: 2026-07-04 19:32:44</p>
+    <table>
+    <tr><th>Device</th><th>IP</th><th>CPU %</th><th>CPU Status</th><th>Memory %</th><th>Memory Status</th></tr><tr><td>R1-Core</td><td>192.168.1.1</td><td>70</td><td class='OK'>OK</td><td>45</td><td class='OK'>OK</td></tr><tr><td>SW1-Access</td><td>192.168.1.2</td><td>56</td><td class='OK'>OK</td><td>83</td><td class='WARNING'>WARNING</td></tr><tr><td>FW1-Edge</td><td>192.168.1.3</td><td>67</td><td class='OK'>OK</td><td>33</td><td class='OK'>OK</td></tr></table></body></html>
