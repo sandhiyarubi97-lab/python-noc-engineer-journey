@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NOC Dashboard</title>
+    <title>NOC Health Dashboard</title>
+    <meta http-equiv="refresh" content="10"> <!-- 10 sec auto refresh -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        body{font-family:Arial;background:#0d1117;color:#fff;margin:20px}
-        h1{color:#58a6ff}
-        table{width:100%;border-collapse:collapse}
-        th{background:#58a6ff;color:#000;padding:10px}
-        td{padding:8px;border-bottom:1px solid #30363d}
-        .CRITICAL{background:#da3633;font-weight:bold}
-        .WARNING{background:#d29922;color:#000;font-weight:bold}
-        .OK{background:#238636}
+        body {background: #0f172a; color: white; font-family: Arial; padding: 20px;}
+        h1 {color: #38bdf8;}
+        table {width: 100%; border-collapse: collapse; margin-top: 20px;}
+        th {background: #38bdf8; color: black; padding: 12px;}
+        td {padding: 10px; text-align: center; border-bottom: 1px solid #334155;}
+        .ok {background: #16a34a; color: white; font-weight: bold;}
+        .warning {background: #f59e0b; color: black; font-weight: bold;}
+        .critical {background: #dc2626; color: white; font-weight: bold;}
+        .logout {float: right; color: #38bdf8; text-decoration: none;}
+        .chart-container {width: 90%; margin: 40px auto; background: #1e293b; padding: 20px; border-radius: 10px;}
     </style>
 </head>
 <body>
-    <h1>🚀 NOC Health Dashboard - Live</h1>
+    <h1> NOC Health Dashboard - Live</h1>
+    <a href="/logout" class="logout">Logout</a>
+
     <table>
         <tr>
             <th>Device</th>
@@ -25,13 +31,93 @@
         </tr>
         {% for d in devices %}
         <tr>
-            <td>{{ d['Device'] }}</td>
+            <td>{{ d.Device }}</td>
             <td>{{ d['CPU_%'] }}</td>
-            <td class="{{ d['CPU_Status'] }}">{{ d['CPU_Status'] }}</td>
+            <td class="{{ d.CPU_Status.lower() }}">{{ d.CPU_Status }}</td>
             <td>{{ d['Memory_%'] }}</td>
-            <td class="{{ d['Memory_Status'] }}">{{ d['Memory_Status'] }}</td>
+            <td class="{{ d.Memory_Status.lower() }}">{{ d.Memory_Status }}</td>
         </tr>
         {% endfor %}
     </table>
+
+    <div class="chart-container">
+        <h2>CPU & Memory Usage Graph</h2>
+        <canvas id="nocChart"></canvas>
+    </div>
+
+<script>
+const ctx = document.getElementById('nocChart');
+const labels = [{% for d in devices %}'{{ d.Device }}',{% endfor %}];
+const cpuData = [{% for d in devices %}{{ d['CPU_%'] }},{% endfor %}];
+const memData = [{% for d in devices %}{{ d['Memory_%'] }},{% endfor %}];
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [
+            {
+                label: 'CPU %',
+                data: cpuData,
+                backgroundColor: 'rgba(56, 189, 248, 0.7)'
+            },
+            {
+                label: 'Memory %',
+                data: memData,
+                backgroundColor: 'rgba(16, 185, 129, 0.7)'
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {beginAtZero: true, max: 100, ticks: {color: 'white'}},
+            x: {ticks: {color: 'white'}}
+        },
+        plugins: {legend: {labels: {color: 'white'}}}
+    }
+});
+</script>
+<div class="chart-container">
+    <h2>CPU Trend - Last Runs</h2>
+    <canvas id="trendChart"></canvas>
+</div>
+
+<script>
+const trendCtx = document.getElementById('trendChart');
+const history = {{ history | tojson | safe}}; // flask to js
+
+const datasets = [];
+const colors = ['#38bdf8', '#10b981', '#f59e0b'];
+let i = 0;
+
+for (const device in history) {
+    datasets.push({
+        label: device + ' CPU',
+        data: history[device].cpu,
+        borderColor: colors[i % 3],
+        tension: 0.3,
+        fill: false
+    });
+    i++;
+}
+
+new Chart(trendCtx, {
+    type: 'line',
+    data: {
+        labels: history[Object.keys(history)[0]]?.time || [],
+        datasets: datasets
+    },
+    options: {
+        responsive: true,
+        scales: {
+            y: {beginAtZero: true, max: 100, ticks: {color: 'white'}},
+            x: {ticks: {color: 'white', maxRotation: 45}}
+        },
+        plugins: {legend: {labels: {color: 'white'}}}
+    }
+});
+</script>
+
 </body>
 </html>
