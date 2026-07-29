@@ -2,7 +2,7 @@
 30 Day Python for NOC Engineer
 Learning Python for Network Operations and Automation 
 
-## 📈 Progress: 29/30 Days Complete
+## 📈 Progress: 30/30 Days Complete
 
 - [x] **Day 1:** Variables, input(), print()
 - [x] **Day 2:** String methods - split(), strip(), replace()
@@ -127,4 +127,11 @@ cd Day29_Email
 pip install flask
 python day29_app.py
 then open http://127.0.0.1:5000
+Login: admin/admin123
+
+### **Day 30: NOC-BRAIN Capstone - One Command Deploy**
+```bash
+cd Day30_deploy
+docker-compose up -d
+then open http://localhost:5000
 Login: admin/admin123
