@@ -26,8 +26,8 @@ def login():
         if request.form['username'] == USERNAME and request.form['password'] == PASSWORD:
             session['logged_in'] = True
             return redirect(url_for('dashboard'))
-        return render_template('login.html', error="Invalid credentials")
-    return render_template('login.html')
+        return render_template('dashboard.html', error="Invalid credentials")
+    return render_template('dashboard.html')
 
 
 @app.route('/dashboard')

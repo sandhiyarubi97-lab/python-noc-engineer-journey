@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NOC Dashboard v2</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<meta http-equiv="refresh" content="10">
+<style>
+body{background:#0f172a;color:#fff;font-family:Arial;margin:20px}
+table{width:100%;border-collapse:collapse;background:#1e293b}
+th,td{padding:12px;border:1px solid #334155;text-align:center}
+.critical{background:#dc2626;font-weight:bold}
+.warning{background:#f59e0b;color:#000;font-weight:bold}
+.ok{background:#16a34a}
+.chart-box{background:#1e293b;padding:20px;margin-top:20px;border-radius:10px}
+</style>
+</head>
+<body>
+<h1>🔴 NOC Dashboard v2 - Live</h1>
+
+<h2>Device Status</h2>
+<table>
+<tr><th>Device</th><th>IP</th><th>CPU %</th><th>CPU Status</th><th>Memory %</th><th>Mem Status</th></tr>
+{% for d in devices %}
+<tr>
+    <td>{{ d.Device }}</td>
+    <td>{{ d.IP }}</td>
+    <td>{{ d['CPU_%'] }}%</td>
+    <td class="{{ d.CPU_Status.lower() }}">{{ d.CPU_Status }}</td>
+    <td>{{ d['Memory_%'] }}%</td>
+    <td class="{{ d.Memory_Status.lower() }}">{{ d.Memory_Status }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<div class="chart-box">
+<h2>CPU vs Memory Bar Chart</h2>
+<canvas id="barChart"></canvas>
+</div>
+
+<div class="chart-box">
+<h2>CPU Trend Line Chart</h2>
+<canvas id="lineChart"></canvas>
+</div>
+
+<script>
+// 1. BAR CHART
+const labels = [{% for d in devices %}'{{ d.Device }}',{% endfor %}];
+const cpuData = [{% for d in devices %}{{ d['CPU_%'] }},{% endfor %}];
+const memData = [{% for d in devices %}{{ d['Memory_%'] }},{% endfor %}];
+
+new Chart(document.getElementById('barChart'), {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [
+            {label: 'CPU %', data: cpuData, backgroundColor: '#3b82f6'},
+            {label: 'Memory %', data: memData, backgroundColor: '#22c55e'}
+        ]
+    },
+    options:{scales:{y:{beginAtZero:true,max:100}}}
+});
+
+// 2. LINE CHART - history empty na kooda work aagum
+const history = {{ history | tojson }};
+const lineCtx = document.getElementById('lineChart');
+const datasets = [];
+let colors = ['#3b82f6','#22c55e','#f59e0b'];
+let i = 0;
+for (const device in history) {
+    datasets.push({
+        label: device + ' CPU',
+        data: history[device].cpu,
+        borderColor: colors[i % 3],
+        fill: false
+    });
+    i++;
+}
+new Chart(lineCtx, {
+    type: 'line',
+    data: {
+        labels: Object.values(history)[0]? Object.values(history)[0].time : [],
+        datasets: datasets
+    },
+    options:{scales:{y:{beginAtZero:true,max:100}}}
+});
+</script>
+</body>
+</html>

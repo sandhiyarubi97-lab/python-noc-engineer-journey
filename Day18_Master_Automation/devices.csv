@@ -1,0 +1,4 @@
+Device,IP,CPU,Memory,Status
+R1-Core,10.1.1.1,95,92,CRITICAL
+SW1-Access,10.1.1.2,32,45,OK
+FW1-Edge,10.1.1.3,85,70,WARNING

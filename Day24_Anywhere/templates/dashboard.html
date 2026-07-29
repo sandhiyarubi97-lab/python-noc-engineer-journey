@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NOC Dashboard</title>
+<style>
+    body { background-color: #000; color: #fff; font-family: Arial; text-align: center; }
+    h1 { color: #00FF00; }
+    .device { display: inline-block; margin: 20px; padding: 20px; border: 2px solid #444; border-radius: 10px; width: 200px; }
+    .UP { background-color: #004400; border-color: #00FF00; }
+    .DOWN { background-color: #440000; border-color: #FF0000; animation: blink 1s infinite; }
+    @keyframes blink { 50% { opacity: 0.5; } }
+</style>
+</head>
+<body>
+    <h1>🚨 NOC DASHBOARD 🚨</h1>
+    <p>Last Updated: {{ last_updated }}</p>
+    {% for name, status in devices.items() %}
+    <div class="device {{ status }}">
+        <h2>{{ name }}</h2>
+        <h3>Status: {{ status }}</h3>
+    </div>
+    {% endfor %}
+<audio id="alertSound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+<script>
+    if("{{ 'DOWN' in devices.values() }}".includes("True")){
+        document.getElementById('alertSound').play();
+    }
+    setTimeout(()=>{location.reload();}, 5000);
+</script>
+</body>
+</html>

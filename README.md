@@ -1,8 +1,8 @@
 # Python-NOC-Journey
 30 Day Python for NOC Engineer
-Learning Python for Network Operations and Automation from Chennai 🇮🇳
+Learning Python for Network Operations and Automation 
 
-## 📈 Progress: 15/30 Days Complete
+## 📈 Progress: 29/30 Days Complete
 
 - [x] **Day 1:** Variables, input(), print()
 - [x] **Day 2:** String methods - split(), strip(), replace()
@@ -19,9 +19,22 @@ Learning Python for Network Operations and Automation from Chennai 🇮🇳
 - [x] **Day 13:** SNMP Basics - CPU/Memory Monitoring
 - [x] **Day 14:** Flask Dashboard - Live Web UI with charts
 - [x] **Day 15:** Email Alerts - SMTP + CSV attachments + HTML reports
-- [x] **Day 16:** Task Scheduler - Automated daily email alerts at 9 AM**
-...
-- [ ] **Day 30:** Capstone - Full NOC Automation Suite
+- [x] **Day 16:** Task Scheduler - Automated daily email alerts at 9 AM + Windows Task Scheduler / cron
+- [x] **Day 17:** API Monitoring - Check REST API status codes + response time
+- [x] **Day 18:** Ping Sweep - Multi-threaded ping for /24
+- [x] **Day 19:** Firewall Log Parser - Extract blocked IPs + GeoIP lookup
+- [x] **Day 20:** Bandwidth Monitor - psutil + live bandwidth graphs
+- [x] **Day 21:** Syslog Server - Receive and store logs from network devices
+- [x] **Day 22:** Ticketing Integration - Auto create tickets in Jira/ServiceNow on DOWN
+- [x] **Day 23:** Web Scraping - Monitor ISP outage page + alert if new outage
+- [x] **Day 24:** Database - Store all logs in SQLite + query dashboard
+- [x] **Day 25:** Docker - Containerize NOC Dashboard for easy deployment
+- [x] **Day 26:** Telegram Bot - Get DOWN alerts directly on Telegram
+- [x] **Day 27:** Role Based Access - Admin vs Viewer login for dashboard
+- [x] **Day 28:** Export Tools - Download CSV + PDF reports from dashboard
+- [x] **Day 29:** Smart Email Alerts - SMTP alert only when status changes UP->DOWN
+- [ ] **Day 30:** Capstone - Full NOC Automation Suite with all modules integrated...
+
 
 ## 🔥 Key Projects
 
@@ -61,6 +74,31 @@ Real-time web dashboard for monitoring network devices using SNMP data.
 **Screenshot:**
 ![NOC Dashboard](Day14_Dashboard/Screenshot.png)
 
+### **Day 16: Task Scheduler**
+Automated daily 9 AM email report with yesterday's uptime CSV attached.
+**Tech:** `schedule` library, `smtplib`, Windows Task Scheduler
+
+### **Day 22: Auto Ticketing**
+When service goes DOWN, Python auto-creates Jira ticket with logs attached.
+**Tech:** `jira` API, `requests`, Email parsing
+
+### **Day 24: SQLite NOC DB**
+Moved from CSV to SQLite. Dashboard now queries DB for 30-day history.
+**Tech:** `sqlite3`, SQL, Flask
+
+### **Day 26: Telegram Alerts**
+Critical DOWN alerts go to Telegram group in <2 seconds.
+**Tech:** `python-telegram-bot`, Webhooks
+
+### **Day 29: Smart Email Alerts**
+Email sent ONLY on state change. Prevents spam. Includes HTML table in email body.
+**Tech:** `smtplib`, `MIMEMultipart`, State tracking dict
+
+### **Day 30: NOC Automation Suite - CAPSTONE**
+Full integrated suite: Dashboard + SNMP + Email + Telegram + Scheduler + DB + Docker
+**Tech:** Everything above + Docker + Gunicorn
+**Goal:** One command `docker-compose up` runs entire NOC
+
 **How to Run:**
 ```bash
 cd Day14_Dashboard
@@ -79,3 +117,14 @@ python Day13_SNMP/snmp_check.py
 ### Day 14: Launch Dashboard
 python Day14_Dashboard/app.py
 then open http://127.0.0.1:5000
+
+### Day 16: Task Scheduler
+python Day16_Scheduler/scheduler.py
+Windows: Task scheduler at 9AM
+
+### Day 29: Smart Email Dashboard
+cd Day29_Email
+pip install flask
+python day29_app.py
+then open http://127.0.0.1:5000
+Login: admin/admin123

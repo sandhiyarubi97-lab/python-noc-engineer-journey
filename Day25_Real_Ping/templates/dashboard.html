@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NOC DASHBOARD - LIVE</title>
+    <meta http-equiv="refresh" content="30">
+    <style>
+        body { background: #0a0a0a; color: white; font-family:Arial; text-align: center; }
+        h1 { color: #00ff00: }
+        .box { display: inline-block; width: 200px; padding: 20px; margin: 10px; border-radius: 10px; font-size: 20px; }
+        .UP { background: green; }
+        .DOWN { background: red; animation: blink 1s infinite; }
+        @keyframes blink { 50% { opacity: 0.5; } }
+        audio { display: none; }
+    </style>
+</head>
+<body>
+    <h1> NOC DASHBOARD - LIVE</h1>
+    <p>Last Update: {{time }}</p>
+    {% for name, status in services.items() %}
+        <div class="box {{ status }}">
+             <b>{{ name }}</b><br>{{ status }}
+        </div>
+        {% if status == "DOWN" %}
+            <audio autoplay>
+                     <source src="https://www.soundjay.com/mechanical/sounds/beep-07.mp3" type="audio/mpeg">
+            </audio>
+        {% endif %}
+    {% endfor %}
+
+    <script>
+         setTimeout((( => { location.reload(); }, 30000);
+    </script>
+</body>
+</html>

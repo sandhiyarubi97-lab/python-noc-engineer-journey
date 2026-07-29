@@ -1,0 +1,4 @@
+Device,IP,Community
+Router-Core,192.168.1.1,public
+Switch-Access,192.168.1.2,public
+Test-Down,192.168.1.999,public

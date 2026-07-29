@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NOC DASHBOARD - LIVE</title>
+    <meta http-equiv="refresh" content="30">
+    <style>
+        body { background: black; color: white; font-family: Arial; text-align: center; }
+        .card { display: inline-block; width: 200px; padding: 20px; margin:10px; border-radius: 10px; }
+        .UP { background: green; }
+        .DOWN { background: red; }
+    </style>
+    <script>
+        setInterval((( => {
+            fetch('/data').then(res => res.join()).then(data => {
+            document.grtElementById('time').innerText = data.time;
+            {);
+            }, 30000);
+    </script>
+</head>
+<body>
+    <h1> NOC DASHBOARD - LIVE</h1>
+    <p>Last Update: <span id="time">{{time }}</span></p>
+    {% for name, status in services.items() %}
+        <div class="card {{ status }}">
+             <h2>{{ name }}</h2>
+            <h3>{{ status }}</h3>
+        </div>
+    {% endfor %}
+</body>
+</html>
