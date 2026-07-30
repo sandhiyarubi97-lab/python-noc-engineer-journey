@@ -16,7 +16,7 @@ DEVICES = {
     "Cloudflare DNS": "1.1.1.1",
     "YouTube": "youtube.com",
     "GitHub": "github.com",
-    "Your Website": "google.com" # add your own
+    "Test Service": "999.999.999.999" # add your own
 }
 
 def ping_host(host):
