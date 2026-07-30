@@ -35,6 +35,16 @@ Learning Python for Network Operations and Automation
 - [x] **Day 29:** Smart Email Alerts - SMTP alert only when status changes UP->DOWN
 - [ ] **Day 30:** Capstone - Full NOC Automation Suite with all modules integrated...
 
+### **Day 30: NOC-BRAIN Dashboard - LIVE ALERT**
+![NOC Dashboard Pro - Alert State](Add Day30_screenshot.png)
+
+**Features Demonstrated:**
+- Real-time monitoring: Google DNS, Cloudflare, YouTube, GitHub
+- Smart Alert Banner: Triggers on DOWN state - Red Alert
+- Color-coded Status Cards: Green=UP, Red=DOWN  
+- Activity Log: Audit trail with timestamps
+- Auto-refresh: 30 seconds
+
 
 ## 🔥 Key Projects
 
