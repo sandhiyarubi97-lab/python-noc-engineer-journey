@@ -36,7 +36,7 @@ Learning Python for Network Operations and Automation
 - [ ] **Day 30:** Capstone - Full NOC Automation Suite with all modules integrated...
 
 ### **Day 30: NOC-BRAIN Dashboard - LIVE ALERT**
-![NOC Dashboard Pro - Alert State](Add Day30_screenshot.png)
+![NOC Dashboard Pro - Alert State](Add%20Day30_screenshot.png)
 
 **Features Demonstrated:**
 - Real-time monitoring: Google DNS, Cloudflare, YouTube, GitHub
